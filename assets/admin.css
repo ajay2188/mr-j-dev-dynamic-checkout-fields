@@ -1,0 +1,297 @@
+/* ── Page layout ── */
+        #wcdcf-page {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            margin-top: 20px;
+            min-height: 500px;
+        }
+
+        /* ── Left panel: field list ── */
+        #wcdcf-list-panel {
+            flex: 0 0 300px;
+        }
+
+        #wcdcf-list-panel h2 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            color: #646970;
+            margin: 0 0 10px;
+        }
+
+        .wcdcf-add-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            width: 100%;
+            padding: 10px;
+            background: #2271b1;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 14px;
+            transition: background .15s;
+        }
+
+        .wcdcf-add-btn:hover {
+            background: #135e96;
+        }
+
+        /* Field card */
+        .wcdcf-field-card {
+            background: #fff;
+            border: 1px solid #c3c4c7;
+            border-radius: 4px;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: border-color .15s, box-shadow .15s;
+            position: relative;
+        }
+
+        .wcdcf-field-card:hover {
+            border-color: #2271b1;
+            box-shadow: 0 0 0 1px #2271b1;
+        }
+
+        .wcdcf-field-card.active {
+            border-color: #2271b1;
+            box-shadow: 0 0 0 2px #2271b1;
+            background: #f0f6fc;
+        }
+
+        .wcdcf-card-top {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .wcdcf-card-icon {
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .wcdcf-card-label {
+            font-weight: 600;
+            font-size: 13px;
+            color: #1d2327;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .wcdcf-card-id {
+            font-size: 11px;
+            color: #787c82;
+            font-family: monospace;
+            background: #f0f0f1;
+            padding: 1px 5px;
+            border-radius: 3px;
+        }
+
+        .wcdcf-card-meta {
+            font-size: 12px;
+            color: #646970;
+        }
+
+        .wcdcf-card-del {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 14px;
+            color: #aaa;
+            cursor: pointer;
+            line-height: 1;
+            display: none;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .wcdcf-field-card:hover .wcdcf-card-del {
+            display: block;
+        }
+
+        .wcdcf-card-del:hover {
+            color: #d63638;
+        }
+
+        /* Empty state */
+        .wcdcf-list-empty {
+            text-align: center;
+            padding: 32px 16px;
+            color: #646970;
+            font-size: 13px;
+            border: 1px dashed #c3c4c7;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        /* ── Right panel: form ── */
+        #wcdcf-form-panel {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        #wcdcf-form-panel h2 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .6px;
+            color: #646970;
+            margin: 0 0 10px;
+        }
+
+        /* Form card */
+        .wcdcf-form-card {
+            background: #fff;
+            border: 1px solid #c3c4c7;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .wcdcf-form-header {
+            padding: 14px 18px;
+            background: #f6f7f7;
+            border-bottom: 1px solid #c3c4c7;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .wcdcf-form-header h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .wcdcf-form-body {
+            padding: 20px 18px;
+        }
+
+        .wcdcf-form-body.two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 24px;
+        }
+
+        .wcdcf-fld {
+            margin-bottom: 18px;
+        }
+
+        .wcdcf-fld.span-2 {
+            grid-column: span 2;
+        }
+
+        .wcdcf-fld>label {
+            display: block;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #1d2327;
+        }
+
+        .wcdcf-fld input[type="text"],
+        .wcdcf-fld input[type="number"],
+        .wcdcf-fld select,
+        .wcdcf-fld textarea {
+            width: 100%;
+        }
+
+        .wcdcf-fld textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .wcdcf-hint {
+            font-size: 12px;
+            color: #646970;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .wcdcf-required-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .wcdcf-required-row input {
+            width: auto !important;
+            margin: 0;
+        }
+
+        .wcdcf-required-row label {
+            font-weight: normal !important;
+            margin: 0;
+        }
+
+        .wcdcf-form-footer {
+            padding: 14px 18px;
+            background: #f6f7f7;
+            border-top: 1px solid #c3c4c7;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .wcdcf-form-footer .cancel {
+            font-size: 13px;
+            color: #646970;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Placeholder when no field selected */
+        #wcdcf-form-placeholder {
+            border: 1px dashed #c3c4c7;
+            border-radius: 4px;
+            padding: 60px 24px;
+            text-align: center;
+            color: #646970;
+            font-size: 14px;
+            background: #fafafa;
+        }
+
+        #wcdcf-form-placeholder .dashicons {
+            font-size: 40px;
+            width: 40px;
+            height: 40px;
+            color: #c3c4c7;
+            display: block;
+            margin: 0 auto 12px;
+        }
+
+        /* Type badge */
+        .wcdcf-type-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+
+        .badge-text {
+            background: #e8f4fd;
+            color: #0073aa;
+        }
+
+        .badge-select {
+            background: #fef8ee;
+            color: #996c00;
+        }
+
+        .badge-checkbox {
+            background: #edf7ed;
+            color: #00a32a;
+        }
